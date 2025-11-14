@@ -38,6 +38,9 @@
         ($getExtention == 'jpg') ? $getExtention = 'jpeg' : $getExtention;
         $fullFunctionName = $sameFunctionName . $getExtention;
         $indexedImage = $fullFunctionName($filePath);
+        if( $getExtention == 'png' || $getExtention == 'gif'){
+            imagepalettetotruecolor($indexedImage);
+        }
         
 
         // Konversi gambar ke webp
@@ -47,7 +50,6 @@
         header("Content-Type: image/webp");
         header("Content-Disposition: attachment; filename=$downloadFileName");
         imagewebp( $indexedImage, null, -1);
-        exit;
     }
 
 

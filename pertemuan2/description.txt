@@ -17,3 +17,4 @@
 
     Additional:
     1. Tambahkan pengecekan agar file harus gambar yang diperbolehkan
+    2. Gambar dari png dan gif perlu tambahan dirubah menjadi truecolor
