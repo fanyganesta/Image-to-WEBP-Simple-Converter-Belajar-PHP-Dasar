@@ -1,0 +1,20 @@
+Tujuan aplikasi ini untuk merubah gambar apapun menjadi file berekstensi WEBP yang sudah dikompres agar web friendly.
+1. Menggunakan fungsi: imagewebp( $object_dari_fungsi_pembuat_img, $alamat_tempat_menyimpan, $quality = -1)
+2. Apa itu $object_dari_fungsi_pembuat_img?
+	-> Yaitu sebuah fungsi yang mengatur cara menyimpan warna dari piksel piksel gambar yang dimaksud.
+	-> Ada 2 cara utama, berbasis palette atau berbasis truecolor
+		-> berbasis palette: yakni kita menyimpan warna perpiksel dengan warna yang terbatas (menggunakan sedikit memori saja)
+		-> berbasis truecolor: per piksel warna disimpan sesuai dengan warna asli gambar (macam macam warna hingga sampai jutaan, sehingga memory yang digunakan besar). Dengan kata lain, ukuran gambar dari JPEG, PNG atau yang lain itulah yang digunakan.
+3. Contoh penggunaan imagewebp() dari gambar jpeg: pertemuan1
+	-> Temuan lain	
+		a. imagewebp() memproses objek gambar (menggunakan parameter pertama) yang telah dipetakan oleh fungsi lain yang bisa create image sesuai dengan extensinya, misal oleh: createimagefromjpeg(), createimagefrompng, atau createimagefromafif
+		b. Fungsi createimagefrom...() menggunakan path dari gambar yang akan dipetakan, misal: pertemuan1/img/contoh_nama_gambar.jpeg
+		c. Penggunaan alamat penyimpanan ( Parameter kedua ) harus disertai nama file yang akan digunakan dan harus disertakan ekstensinya
+		d. Penggunaan nilai kualitas ( parameter ketiga ) bisa antara 0 (terburuk) hingga 100 (terbaik) atau bisa dituliskan -1 (untuk default bernilai 80)
+		e. Fungsi-fungsi yang bisa mempetakan piksel gambar di php ada beberapa:
+			1. gif
+			2. jpg/jpeg (formatnya sama)
+			3. png 
+			4. afif 
+			5. bmp 
+4. Dari temuan yang ada, kita akan menggunakan fungsi createimage dari php ini untuk memilih file apapun yang dimasukkan user agar bisa diproses/dikonversi ke WEBP pada pertemuan2 sekaligus kita akan buat index.php agar user langsung mengarahkan ke pertemuan2
