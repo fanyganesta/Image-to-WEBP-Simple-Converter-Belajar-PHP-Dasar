@@ -1,0 +1,19 @@
+    1. Langkah yang akan kita lakukan
+    2. Buat struktur HTML untuk input file yang akan di proses
+    3. Buat file function.php untuk logika dan pemrosesan data 
+    4. Rubah ekstensi file menggunakan imagewebp( $objek_gambar, $alamat_simpan, $kualitas = -1)
+    5. $kualitas akan kita defaultkan (bernilai 80) dengan mengisikan parameter ketiga bernilai -1.
+    6. $alamat_simpan akan kita hilangkan atau di-null-kan agar gambar tidak tersimpan ke server dan langsung terdownload oleh user.
+    7. $objek_gambar kita dapatkan menggunakan fungsi: createimagefrom...(). Dimana fungsi tersebut akan kita pilih berdasarkan file yang diupload oleh user. Jadi kita harus tangkap dahulu file dari user dan ambil extensinya
+    8. Kita ambil ekstensi dari $_FILE['nama_input']['name'].
+    9. Kita pecah nama yang ada diantara '.' (titik) agar menghasilkan array yang berisi 'nama_file' dan 'extensi_file' pada index terakhir array dengan fungsi explode().
+    10. Kita ambil extensi file dari user dengan fungsi end(). Fungsi end() ini otomatis mengambil data dari index terakhir sebuah array.
+    11. Extensi yang kita ambil, kita gunakan dengan switch untuk memilih fungsi createimagefrom...() agar apapun filenya (dalam gambar kecuali webp) bisa diproses oleh aplikasi.
+    10. Dari masing masing switch, keluarannya kita gunakan untuk melengkapi fungsi createimagefrom...()
+    11. Parameter pertama dari createimagefrom...( $path_gambar_yang_akan_diproses, ) kita dapatkan dari $_FILES['nama_input']['tmp_name'].
+    12. Jika sudah semua, maka kita akan perintahkan user untuk download file konversi denganheader("Content-Desposition: attachment, filename=$nama_file_telah_dikonversi")
+    13. $nama_file_telah_dikonversi ini kita isikan dahulu dengan 'converted-' . $index_pertama_hasil_explode
+    14. selesai, exit;
+
+    Additional:
+    1. Tambahkan pengecekan agar file harus gambar yang diperbolehkan
